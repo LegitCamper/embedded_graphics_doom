@@ -1,0 +1,9 @@
+[package]
+name = "simulator"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+embedded-graphics = "0.8.1"
+embedded-graphics-simulator = "0.8.0"
+embedded_graphics_doom = { path = "../" }
