@@ -29,7 +29,11 @@ fn main() {
 
     cc::Build::new()
         .flag("-w") // Disable warnings
+        .flag("-Os") // size
         .define("CMAP256", None) // enables 8-bit pixel mode
+        .define("DOOMGENERIC_RESX", Some("320"))
+        .define("DOOMGENERIC_RESY", Some("200"))
+        .define("MAXPLAYERS", Some("1"))
         .flag_if_supported("-std=c99") // force C99
         .define("_POSIX_C_SOURCE", Some("200809L"))
         .files(dg_c_paths)

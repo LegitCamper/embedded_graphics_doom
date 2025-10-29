@@ -1,20 +1,10 @@
-#![feature(generic_const_exprs)]
 #![no_std]
-
-use alloc::boxed::Box;
-use embedded_graphics::{
-    Pixel,
-    pixelcolor::Rgb565,
-    prelude::{DrawTarget, Point},
-};
-use oncelock::OnceCell;
 
 extern crate alloc;
 
 #[unsafe(no_mangle)]
+#[allow(non_snake_case)]
 static mut DG_ScreenBuffer: *const u8 = core::ptr::null();
-
-static mut DRAW_CALLBACK: OnceCell<&'static (dyn Fn() + Sync)> = OnceCell::new();
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug)]
@@ -31,7 +21,6 @@ unsafe extern "C" {
     fn M_FindResponseFile();
 
     pub static colors: [RGBA; 256];
-
 }
 
 pub fn tick() {
@@ -41,6 +30,7 @@ pub fn tick() {
 pub struct ScreenBuffer<const RESX: usize, const RESY: usize, const SIZE: usize>(pub [u8; SIZE]);
 
 impl<const RESX: usize, const RESY: usize, const SIZE: usize> ScreenBuffer<RESX, RESY, SIZE> {
+    #[allow(dead_code)]
     const NA: () = assert!(SIZE == RESX * RESY);
 
     pub const fn new() -> Self {

@@ -2,25 +2,16 @@
 #![allow(static_mut_refs)]
 use std::{
     os::raw,
-    sync::Mutex,
     thread::sleep,
     time::{Duration, Instant},
 };
 
-use embedded_graphics::{
-    Drawable,
-    draw_target::DrawTarget,
-    mono_font::{MonoTextStyle, ascii::FONT_6X9},
-    pixelcolor::{BinaryColor, Rgb565},
-    prelude::*,
-    primitives::{Circle, Line, PrimitiveStyle, Rectangle},
-    text::Text,
-};
+use embedded_graphics::{Drawable, draw_target::DrawTarget, pixelcolor::Rgb565, prelude::*};
 use embedded_graphics_doom::{ScreenBuffer, colors, create, tick};
 use embedded_graphics_simulator::{OutputSettingsBuilder, SimulatorDisplay, Window};
 
-const X: usize = 640;
-const Y: usize = 400;
+const X: usize = 320;
+const Y: usize = 200;
 const SIZE: usize = X * Y;
 
 pub static mut DISPLAY: Option<SimulatorDisplay<Rgb565>> = None;

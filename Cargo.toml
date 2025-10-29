@@ -8,7 +8,6 @@ members = [".", "simulator"]
 
 [dependencies]
 embedded-graphics = "0.8.1"
-oncelock = { version = "0.1.0-alpha.0", default-features = false }
 
 [build-dependencies]
 bindgen = "0.71.0"

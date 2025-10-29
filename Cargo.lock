@@ -185,7 +185,6 @@ dependencies = [
  "bindgen",
  "cc",
  "embedded-graphics",
- "oncelock",
 ]
 
 [[package]]
@@ -342,15 +341,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "oncelock"
-version = "0.1.0-alpha.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f67d3cfd3d50536edaa4a4e17ddcb04fbaef82eb6dd120b16e2752c4e8fe04ca"
-dependencies = [
- "rustversion",
-]
-
-[[package]]
 name = "ouroboros"
 version = "0.18.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -471,12 +461,6 @@ name = "rustc-hash"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "357703d41365b4b27c590e3ed91eabb1b663f07c4c084095e60cbed4362dff0d"
-
-[[package]]
-name = "rustversion"
-version = "1.0.22"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b39cdef0fa800fc44525c84ccb54a029961a8215f9619753635a9c0d2538d46d"
 
 [[package]]
 name = "sdl2"
